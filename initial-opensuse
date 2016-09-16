@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo zypper remove vim vim-data
+
+sudo zypper update
+
+sudo zypper patch
+
+sudo zypper in aria2 clang gcc48-c++ gcc-c++ fcitx fcitx-pinyin-tools fcitx-cloudpinyin fcitx-rime rime byzanz python-gevent python-vte python-pycrypto mozilla-nss-tools python-M2Crypto python-setuptools python-pip python-devel python3-devel ruby-devel lua-devel ncurses-devel libX11-devel gtk2 gtk2-devel ctags perl-devel cmake git wmctrl nodejs apache2 phpMyAdmin

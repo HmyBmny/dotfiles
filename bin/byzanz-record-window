@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# recording duration
+DURA=256
+
+# output file name
+RANDOMSTR=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
+OUTPUT="record_screen($RANDOMSTR).gif"
+
+# Sound notification to let one know when recording is about to start (and ends)
+beep() {
+paplay /usr/share/sounds/gnome/default/alerts/glass.ogg &
+}
+
+echo 'choose windows by mouse ...'
+
+XWININFO=$(xwininfo)
+read X < <(awk -F: '/Absolute upper-left X/{print $2}' <<< "$XWININFO")
+read Y < <(awk -F: '/Absolute upper-left Y/{print $2}' <<< "$XWININFO")
+read W < <(awk -F: '/Width/{print $2}' <<< "$XWININFO")
+read H < <(awk -F: '/Height/{print $2}' <<< "$XWININFO")
+
+echo "byzanz will start to record $DURA seconds after 4 seconds, [ctrl-c] stop."
+sleep 4
+echo 'BEGIN >>>>'
+
+# catch the ctrl-c, to tell byzanz stop
+trap 'echo " "' 2
+
+beep
+byzanz-record --cursor --delay=0 --duration=$DURA --x=$X --y=$Y --width=$W --height=$H $OUTPUT 2>/dev/null
+beep
+echo "END <<<<"
+echo "you get $OUTPUT"

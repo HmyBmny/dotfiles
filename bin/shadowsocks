@@ -1,0 +1,2 @@
+#!/bin/bash
+cd / && sslocal -c opt/shadowsocks/1080.json
