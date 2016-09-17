@@ -23,3 +23,13 @@ alias vi='gvim'
 
 alias ..='cd ..'
 alias ...='cd ../..'
+
+alias vimrc='cd ~/HmyBmny/vimrc'
+alias dotfiles='cd ~/HmyBmny/dotfiles'
+alias blog='cd ~/HmyBmny/hmybmny.github.io'
+alias homepagecode='cd ~/HmyBmny/homepagecode'
+alias notes='cd ~/HmyBmny/notes'
+alias homepage='cd ~/HmyBmny/homepagecode/homepage'
+
+alias rp='cd ~/HmyBmny/homepagecode/homepage/content'
+alias hp='cd ~/HmyBmny/homepagecode/homepage && make devserver'
