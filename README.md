@@ -1,2 +1,1 @@
-# snippets
-Dot files for the ~/ directory
+snippets in the ~/ directory
