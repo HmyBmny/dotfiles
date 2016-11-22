@@ -1,1 +1,0 @@
-snippets in the ~/ directory
